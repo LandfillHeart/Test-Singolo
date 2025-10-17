@@ -11,6 +11,7 @@ namespace ProvaTecnica.EShop
 		public string Name { get; }
 		public float BasePrice { get; }
 		public float GetCost();
+		public string Description();
 	}
 
 	public class ShopItem : IShopItem
@@ -27,6 +28,11 @@ namespace ProvaTecnica.EShop
 		public float GetCost()
 		{
 			return AppContext.Instance.GetRealPrice(BasePrice);
+		}
+
+		public string Description()
+		{
+			return $"{Name}: {AppContext.Instance.Currency}{GetCost()}";
 		}
 	}
 }

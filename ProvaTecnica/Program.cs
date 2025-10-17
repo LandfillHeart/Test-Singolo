@@ -10,9 +10,4 @@
 		}
 	}
 
-	public static void AddToOrder()
-	{
-
-	}
-
 }

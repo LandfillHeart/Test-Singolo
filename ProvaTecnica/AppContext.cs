@@ -47,7 +47,7 @@ namespace ProvaTecnica
 		public float GetRealPrice(float basePrice)
 		{
 			// TODO: CREATE PERCENTAGE THIS DOESNT WORK
-			return basePrice + iva;
+			return basePrice + (basePrice * iva / 100) - (basePrice * shopWideDiscount / 100);
 		}
 	}
 }

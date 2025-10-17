@@ -37,7 +37,14 @@ namespace ProvaTecnica
 		public void ConcludeOrder()
 		{
 			ordersMade.Add(basket);
+			basket.CheckOut();
 			basket = new Order();
+		}
+
+		public void CheckOut()
+		{
+			Console.WriteLine($"Grazie per aver ordinato da noi! Il tuo totale è di : {AppContext.Instance.Currency}{basket.GetOrderCost()}");
+			ConcludeOrder();
 		}
 
 	}
