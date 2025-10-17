@@ -39,15 +39,17 @@ namespace ProvaTecnica
 		private float shopWideDiscount;
 		public float ShopWideDiscount => shopWideDiscount;
 
+		private PricingContext pricingContext = new PricingContext();
+
 		/// <summary>
-		/// Takes base price, translates to user's currency, adds IVA
+		/// Takes base price, translates to user's currency, calculates price based on context (wholesale, discount, standard, etc)
 		/// </summary>
 		/// <param name="basePrice"></param>
 		/// <returns></returns>
 		public float GetRealPrice(float basePrice)
 		{
-			// TODO: CREATE PERCENTAGE THIS DOESNT WORK
-			return basePrice + (basePrice * iva / 100) - (basePrice * shopWideDiscount / 100);
+			// translate from user currency to server currency
+			return pricingContext.GetCost(basePrice);
 		}
 	}
 }
