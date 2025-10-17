@@ -32,6 +32,8 @@ namespace ProvaTecnica.EShop
 		}
 	}
 
+
+	// until there is no special behaviour, no need for new classes
 	public class SimpleDecorator : ItemDecorator
 	{
 		public SimpleDecorator(string name, float basePrice, IShopItem component) : base(name, basePrice, component)

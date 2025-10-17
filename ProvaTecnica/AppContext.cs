@@ -24,6 +24,7 @@ namespace ProvaTecnica
 		private AppContext()
 		{
 			// read from server the user's location, applicable discounts, etc
+			// statically defined now, but in the future this could make a server request based on the user's IP
 			currency = "€";
 			iva = 22f;
 			shopWideDiscount = 10f;
@@ -48,7 +49,7 @@ namespace ProvaTecnica
 		/// <returns></returns>
 		public float GetRealPrice(float basePrice)
 		{
-			// translate from user currency to server currency
+			// TO-DO: translate from user currency to server currency
 			return pricingContext.GetCost(basePrice);
 		}
 	}

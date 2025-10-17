@@ -25,8 +25,10 @@ namespace ProvaTecnica
 		private User() { }
 		#endregion
 
+		// all the orders the user has completed in the past
 		private List<Order> ordersMade = new List<Order>();
 		
+		// basket is the order the user is currently making - eshops usually only allow one basket
 		private Order basket = new Order();
 
 		public void AddToOrder(IShopItem newItem)

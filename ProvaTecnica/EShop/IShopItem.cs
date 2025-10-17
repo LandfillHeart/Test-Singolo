@@ -14,6 +14,7 @@ namespace ProvaTecnica.EShop
 		public string Description();
 	}
 
+	// until there is no special behaviour, no need for new classes
 	public class ShopItem : IShopItem
 	{
 		public string Name { get; private set; }
